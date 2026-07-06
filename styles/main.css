@@ -45,7 +45,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  cursor: url("images/ywamchiangmai-ywam-chiangmai-cursor-dark.svg") 4 4, auto;
+  cursor: url("../images/ywamchiangmai-ywam-chiangmai-cursor-dark.svg") 4 4, auto;
   margin: 0;
   font-family: var(--font-body);
   font-size: 1.0625rem;
@@ -114,12 +114,19 @@ body::after {
 /* ============ Masthead + hero ============ */
 .masthead { position: relative; }
 .hero, .mission, .start, .footer {
-  cursor: url("images/ywamchiangmai-ywam-chiangmai-cursor-white.svg") 4 4, auto;
+  cursor: url("../images/ywamchiangmai-ywam-chiangmai-cursor-white.svg") 4 4, auto;
 }
 .masthead__nav {
-  position: absolute; top: 0; left: 0; right: 0; z-index: 10;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 1.4rem var(--gutter); color: var(--paper);
+  transition: background-color 0.35s ease, box-shadow 0.35s ease;
+}
+.masthead__nav.is-scrolled {
+  background: rgba(33, 28, 21, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(247, 241, 230, 0.08);
 }
 .masthead__brand {
   font-family: var(--font-display); font-size: 1.5rem; text-decoration: none; font-weight: 600;
@@ -129,8 +136,8 @@ body::after {
 .brand-mark {
   width: 1.6rem; height: 1.6rem; flex: none; display: inline-block;
   background: currentColor;
-  -webkit-mask: url("images/ywamchiangmai-ywam-chiangmai-safari-pinned-tab.svg") center / contain no-repeat;
-  mask: url("images/ywamchiangmai-ywam-chiangmai-safari-pinned-tab.svg") center / contain no-repeat;
+  -webkit-mask: url("../images/ywamchiangmai-ywam-chiangmai-logo-mark-dark.svg") center / contain no-repeat;
+  mask: url("../images/ywamchiangmai-ywam-chiangmai-logo-mark-dark.svg") center / contain no-repeat;
 }
 .masthead__links { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; align-items: center; }
 .masthead__links a { text-decoration: none; font-weight: 600; font-size: 0.95rem; opacity: 0.92; }

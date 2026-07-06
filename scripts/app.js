@@ -18,6 +18,16 @@
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
+  // Sticky nav background
+  var nav = document.querySelector(".masthead__nav");
+  if (nav) {
+    var onScroll = function () {
+      nav.classList.toggle("is-scrolled", window.scrollY > 24);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
   // Mobile menu
   var btn = document.querySelector(".masthead__menu-btn");
   var menu = document.getElementById("mobile-menu");
