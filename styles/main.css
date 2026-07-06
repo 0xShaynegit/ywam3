@@ -45,6 +45,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
+  cursor: url("images/ywamchiangmai-ywam-chiangmai-cursor-dark.svg") 4 4, auto;
   margin: 0;
   font-family: var(--font-body);
   font-size: 1.0625rem;
@@ -112,6 +113,9 @@ body::after {
 
 /* ============ Masthead + hero ============ */
 .masthead { position: relative; }
+.hero, .mission, .start, .footer {
+  cursor: url("images/ywamchiangmai-ywam-chiangmai-cursor-white.svg") 4 4, auto;
+}
 .masthead__nav {
   position: absolute; top: 0; left: 0; right: 0; z-index: 10;
   display: flex; align-items: center; justify-content: space-between;
@@ -119,8 +123,15 @@ body::after {
 }
 .masthead__brand {
   font-family: var(--font-display); font-size: 1.5rem; text-decoration: none; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 0.6rem;
 }
 .masthead__brand span { font-style: italic; font-weight: 300; }
+.brand-mark {
+  width: 1.6rem; height: 1.6rem; flex: none; display: inline-block;
+  background: currentColor;
+  -webkit-mask: url("images/ywamchiangmai-ywam-chiangmai-safari-pinned-tab.svg") center / contain no-repeat;
+  mask: url("images/ywamchiangmai-ywam-chiangmai-safari-pinned-tab.svg") center / contain no-repeat;
+}
 .masthead__links { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; align-items: center; }
 .masthead__links a { text-decoration: none; font-weight: 600; font-size: 0.95rem; opacity: 0.92; }
 .masthead__links a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
@@ -288,7 +299,7 @@ body::after {
   border-top: 1px solid rgba(247, 241, 230, 0.18); padding-top: 2.5rem;
   font-size: 0.95rem;
 }
-.footer__brand { font-family: var(--font-display); font-size: 1.3rem; color: var(--paper); }
+.footer__brand { font-family: var(--font-display); font-size: 1.3rem; color: var(--paper); display: inline-flex; align-items: center; gap: 0.55rem; }
 .footer__brand span { font-style: italic; font-weight: 300; }
 .footer nav { display: flex; flex-direction: column; gap: 0.5rem; }
 .footer a { color: inherit; text-decoration: none; }
